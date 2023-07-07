@@ -11,7 +11,7 @@ console.log(`Число M` + M);
 let missEven = confirm("Чи потрібно пропускати парні числа?");
 let sum = 0;
 for (let i = N; i <= M; i++) {
-  if (missEven && i % 2 == 0) {
+  if (missEven && i % 2 === 0) {
   }
   sum += i;
 }
