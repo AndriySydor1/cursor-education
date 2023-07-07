@@ -17,10 +17,8 @@ for (let i = N; i <= M; i++) {
     sum += i;
   }
 }
-document.writeln(
-  `Число N: ${N} <br>
-    Число M: ${M} <br>
-    Чи пропускаємо парні числа? ${missEven} <br>
-    Сума: ${sum}
-    `
-);
+
+console.log("N ", N);
+console.log("M ", M);
+console.log("Чи пропускаємо парні числа? ", missEven);
+console.log("Сума ", sum);
