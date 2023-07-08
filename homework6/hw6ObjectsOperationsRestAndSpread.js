@@ -30,71 +30,71 @@ const students = [
 
 // Розподіляємо студент і предмети
 function getSubjects(student) {
-  const subjectKeys = Object.keys(student.subjects);
-  const formattedSubjects = subjectKeys.map((subject) => {
+  const clues = Object.keys(student.subjects);
+  const topics = clues.map((subject) => {
     return subject.charAt(0).toUpperCase() + subject.slice(1).replace("_", " ");
   });
-  return formattedSubjects;
+  return topics;
 }
 
-const student = students[0];
-const subjects = getSubjects(student);
-console.log("Список предметів:", subjects);
+const hosteler = students[0];
+const disciplines = getSubjects(hosteler);
+console.log("Список предметів:", disciplines);
 
 // Середня оцінка студента
 function getAverageMark(student) {
-  const marks = Object.values(student.subjects).flat();
-  const totalMarks = marks.reduce((sum, mark) => sum + mark, 0);
-  const averageMark = totalMarks / marks.length;
+  const estimates = Object.values(student.subjects).flat();
+  const estimations = estimates.reduce((sum, mark) => sum + mark, 0);
+  const valuation = estimations / estimates.length;
   return {
-    average: averageMark.toFixed(2),
+    average: valuation.toFixed(2),
   };
 }
 
-const studentWithMarks = students[0];
-const averageMark = getAverageMark(studentWithMarks);
-console.log("Середня оцінка студента:", averageMark);
+const colleger = students[0];
+const valuation = getAverageMark(colleger);
+console.log("Середня оцінка студента:", valuation);
 
 // Інформація про студента
 function getStudentInfo(student) {
-  const infoStudent = {
+  const scholar = {
     course: student.course,
     name: student.name,
     averageMark: getAverageMark(student),
   };
 
-  return infoStudent;
+  return scholar;
 }
-const studentAbout = students[0];
-const studentInfo = getStudentInfo(studentAbout);
-console.log("Інфоримація про студента:", studentInfo);
+const tutee = students[0];
+const trainee = getStudentInfo(tutee);
+console.log("Інфоримація про студента:", trainee);
 
 // Імена студентів
 function getStudentsNames(students) {
-  const names = students.map((student) => student.name);
-  names.sort();
-  return names;
+  const denominations = students.map((student) => student.name);
+  denominations.sort();
+  return denominations;
 }
-const studentNames = getStudentsNames(students);
-console.log("Імена в алфавітному порядку:", studentNames);
+const designations = getStudentsNames(students);
+console.log("Імена в алфавітному порядку:", designations);
 
 // Найкращий студент
 function getBestStudent(students) {
-  let bestStudent = null;
-  let bestAverageMark = -Infinity;
+  let excellent = null;
+  let appreciation = 0;
 
   for (let i = 0; i < students.length; i++) {
-    const averageMark = getAverageMark(students[i]).average;
+    const medianScore = getAverageMark(students[i]).average;
 
-    if (averageMark > bestAverageMark) {
-      bestAverageMark = averageMark;
-      bestStudent = students[i].name;
+    if (medianScore > appreciation) {
+      appreciation = medianScore;
+      excellent = students[i].name;
     }
   }
-  return bestStudent;
+  return excellent;
 }
-const bestStudent = getBestStudent(students);
-console.log("Найкращий студент -", bestStudent);
+const excellent = getBestStudent(students);
+console.log("Найкращий студент -", excellent);
 
 // Рахуємо кількість букв у слові
 function calculateWordLetters() {
@@ -103,25 +103,25 @@ function calculateWordLetters() {
     word = prompt("Помилка! Введене слово - некоректне");
   }
 
-  const letters = {};
+  const characters = {};
 
   for (let i = 0; i < word.length; i++) {
-    const letter = word[i].toLowerCase();
+    const character = word[i].toLowerCase();
 
-    if (letter !== " ") {
-      if (letters.hasOwnProperty(letter)) {
-        letters[letter]++;
+    if (character !== " ") {
+      if (characters.hasOwnProperty(character)) {
+        characters[character]++;
       } else {
-        letters[letter] = 1;
+        characters[character] = 1;
       }
     }
   }
-  return letters;
+  return characters;
 }
 
-const wordLetters = calculateWordLetters();
+const symbols = calculateWordLetters();
 document.writeln("Розбір вашого слова {");
-for (const letter in wordLetters) {
-  document.writeln(`"${letter}": ${wordLetters[letter]},`);
+for (const character in symbols) {
+  document.writeln(`"${character}": ${symbols[character]},`);
 }
 document.writeln("}");
