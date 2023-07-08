@@ -19,7 +19,7 @@ const divideByThree = (word) => {
   return result;
 };
 console.log(
-  "Function divideByThree розбиває кожне слово на умовні склади по 3 букви\n",
+  "Function divideByThree breaks each word into conditional syllables of 3 letters\n",
   divideByThree("Commander")
 );
 const getRandomArray = (length, min, max) => {
@@ -64,15 +64,16 @@ const getAverage = (...numbers) => {
     numbers.length
   );
 };
+const values3 = [6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2];
 console.log(
-  `Function getAverage calculates the arithmetic average of all arguments passed to it\n ${numbers}\n result - `,
-  getAverage(...numbers)
+  `Function getAverage calculates the arithmetic average of all arguments passed to it\n ${values3}\n result - `,
+  getAverage(...values3)
 );
 const countPositiveNumbers = (...numbers) => {
   return numbers.filter((item) => item > 0).length;
 };
-const values3 = [1, -2, 3, -4, -5, 6];
+const values4 = [1, -2, 3, -4, -5, 6];
 console.log(
-  `Function countPositiveNumbers counts the quantity of positive numbers\n ${values3}\n result - `,
-  countPositiveNumbers(...values3)
+  `Function countPositiveNumbers counts the quantity of positive numbers\n ${values4}\n result - `,
+  countPositiveNumbers(...values4)
 );
