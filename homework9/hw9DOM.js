@@ -1,29 +1,32 @@
-function achieveSections() {
-  const assembly = document.getElementsByClassName("wrapper");
-  Array.from(assembly).forEach((item) => item.remove());
+const generateBlocks = () => {
+  const collection = document.getElementsByClassName("wrapper");
+  Array.from(collection).forEach((item) => item.remove());
 
   const wrapper = document.createElement("div");
   wrapper.classList.add("wrapper");
   document.body.appendChild(wrapper);
 
-  const quadrate = document.createElement("div");
-  quadrate.classList.add("square");
+  const square = document.createElement("div");
+  square.classList.add("square");
 
   for (let i = 0; i < 25; i++) {
-    let freshItem = quadrate.cloneNode(true);
-    freshItem.style.backgroundColor = arbitraryPaint();
-    wrapper.insertAdjacentElement("beforeend", freshItem);
+    let newElement = square.cloneNode(true);
+    newElement.style.backgroundColor = getRandomColor();
+    wrapper.insertAdjacentElement("beforeend", newElement);
   }
-}
-const causedChunksHiatus = () => {
-  setInterval(achieveSections, 2000);
 };
-causedChunksHiatus();
-function arbitraryPaint() {
-  const characters = "0123456789ABCDEF";
-  let hue = "#";
+
+const generateBlocksInterval = () => {
+  setInterval(generateBlocks, 2000);
+};
+
+generateBlocksInterval();
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
   for (let i = 0; i < 6; i++) {
-    hue += characters[Math.floor(Math.random() * 16)];
+    color += letters[Math.floor(Math.random() * 16)];
   }
-  return hue;
+  return color;
 }
