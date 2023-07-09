@@ -1,4 +1,4 @@
-const achieveSections = () => {
+function achieveSections() {
   const assembly = document.getElementsByClassName("wrapper");
   Array.from(assembly).forEach((item) => item.remove());
 
@@ -14,7 +14,7 @@ const achieveSections = () => {
     freshItem.style.backgroundColor = arbitraryPaint();
     wrapper.insertAdjacentElement("beforeend", freshItem);
   }
-};
+}
 const causedChunksHiatus = () => {
   setInterval(achieveSections, 2000);
 };
