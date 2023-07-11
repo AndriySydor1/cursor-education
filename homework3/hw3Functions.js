@@ -56,7 +56,7 @@ const convertCurrency = () => {
   const currency = money.match(/UAH|\$/gi) ? money.match(/UAH|\$/gi)[0] : "";
   if (!currency) return "Введіть коректну валюту";
   if (currency === "$") return Math.round(money.slice(0, -1) * 37) + "грн.";
-  if (currency === "UAH" || "uah")
+  if (currency === "UAH" || currency === "uah")
     return Math.round(money.slice(0, -3) / 37) + "$";
 };
 const getRandomPassword = () => {
