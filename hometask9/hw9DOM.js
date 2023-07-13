@@ -1,24 +1,20 @@
-const achieveSections = () => {
-  const assembly = document.getElementsByClassName("wrapper");
-  Array.from(assembly).forEach((item) => item.remove());
-
-  const wrapper = document.createElement("div");
-  wrapper.classList.add("wrapper");
-  document.body.appendChild(wrapper);
-
-  const quadrate = document.createElement("div");
-  quadrate.classList.add("square");
+function achieveSection() {
+  const jar = document.createElement("div");
+  jar.style.display = "flex";
+  jar.style.flexWrap = "wrap";
+  jar.style.width = "250px";
+  jar.style.height = "250px";
+  document.body.appendChild(jar);
 
   for (let i = 0; i < 25; i++) {
-    let freshItem = quadrate.cloneNode(true);
-    freshItem.style.backgroundColor = arbitraryPaint();
-    wrapper.insertAdjacentElement("beforeend", freshItem);
+    const quadrate = document.createElement("div");
+    quadrate.style.width = "50px";
+    quadrate.style.height = "50px";
+    quadrate.style.backgroundColor = arbitraryPaint();
+    jar.appendChild(quadrate);
   }
-};
-const causedChunksHiatus = () => {
-  setInterval(achieveSections, 2000);
-};
-causedChunksHiatus();
+}
+
 function arbitraryPaint() {
   const characters = "0123456789ABCDEF";
   let hue = "#";
@@ -27,3 +23,15 @@ function arbitraryPaint() {
   }
   return hue;
 }
+
+function causeChunksHiatus() {
+  setInterval(() => {
+    const squares = document.querySelectorAll("div");
+    squares.forEach((square) => {
+      square.style.backgroundColor = arbitraryPaint();
+    });
+  }, 1000);
+}
+
+achieveSection();
+causeChunksHiatus();
