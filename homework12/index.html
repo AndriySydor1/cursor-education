@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/flex.css" />
+    <link rel="stylesheet" href="style/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tektur:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>HW12_Work with server</title>
+  </head>
+  <body>
+    <div class="main flex">
+      <h1>ЗОРЯНІ ВІЙНИ</h1>
+      <nav class="nav">
+        <button class="button" id="getInfo">
+          Get information about characters
+        </button>
+        <input
+          type="number"
+          class="button"
+          id="numberFilm"
+          placeholder="Film number"
+          max="6"
+          min="1"
+        />
+        <button class="button" id="getPlanets">List of planets</button>
+      </nav>
+      <div class="section"></div>
+      <button class="button" id="back" style="display: none">BACK</button>
+      <button class="button" id="next" style="display: none">NEXT</button>
+      <button class="button" id="clean" style="display: none">CLEAN_ALL</button>
+    </div>
+
+    <script src="hw12WorkingWithTheServer.js"></script>
+  </body>
+</html>
